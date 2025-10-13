@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>It's a Shopping List...</h1>
+    <br />
+    <span> Enter a new item: </span>
+    <input id="input-field" />
+    <button onclick="addHandler()">Add item</button>
+    <br />
+
+    <script>
+      let list = document.createElement("ul");
+      document.body.appendChild(list);
+
+      function addHandler() {
+        let inputText = document.getElementById("input-field");
+
+        if (inputText.value == "") {
+          return;
+        }
+
+        let item = document.createElement("li");
+        list.appendChild(item);
+
+        // console.log(inputText.value);
+        let itemContent = document.createElement("span");
+        itemContent.textContent = inputText.value;
+        item.appendChild(itemContent);
+
+        let delBtn = document.createElement("button");
+        delBtn.textContent = "Button";
+        item.appendChild(delBtn);
+        delBtn.classList.add("del-btn");
+      }
+      //
+      // let item= document.getElementsByClassName('item')
+      // console.log(item)
+
+      // let delBtn= document.getElementsByClassName('del-btn');
+      // delBtn.addEventListener('click',function(event){
+      //     console.log(event.target.value)
+      // })
+
+    //   if (confirm("Are you sure you want to delete this item?")) {
+    //     // Code to execute if the user confirms (clicks OK)
+    //     console.log("Item deleted.");
+    //   } else {
+    //     // Code to execute if the user cancels (clicks Cancel)
+    //     console.log("Deletion cancelled.");
+    //   }
+    </script>
+  </body>
+</html>

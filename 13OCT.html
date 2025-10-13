@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #highlight{
+            color: brown;
+        }
+        .bold{
+            font-weight: bold;
+            color: blue;
+        }
+        .parent-div{
+            height: 200px;
+            width: 400px;
+            background-color: bisque;
+        }
+        .child-div{
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="highlight">
+        
+        Some Random Text...
+    </div>
+    <br>
+    <div id="div1">
+        This is the inner html text
+    </div>
+    <br>
+    <div id="div2">
+        This is the text content
+    </div>
+    <br>
+    <button onclick="changeHandler()">
+        Change 
+    </button>
+    <button onclick="classHandler()"> Class Handler</button>
+
+    <br> <br>
+
+</body>
+<script>
+    function changeHandler(){
+        document.getElementById('div1').innerHTML= `<strong> This is the changed inner HTML<./strong>`
+        document.getElementById('div2').textContent= 'This the changed text content.'
+    }
+    function classHandler(){
+        const highlightDiv=document.getElementById('highlight');
+        // console.log(highlightDiv)
+        // highlightDiv.classList.add('bold');
+        // highlightDiv.classList.toggle('bold')
+        highlightDiv.style.color="green";
+    }
+
+    let parentDiv= document.createElement('div');
+    parentDiv.innerHTML=`<h1> This is the parent heading. </h1>` ;
+    parentDiv.classList.add('parent-div');
+    document.body.appendChild(parentDiv);
+
+    let childDiv= document.createElement('div');
+    childDiv.innerHTML=`<h4> This is the child div. </h4>`
+
+    childDiv.classList.add('child-div');
+    document.body.appendChild(childDiv);
+    parentDiv.appendChild(childDiv);
+    parentDiv.appendChild(childDiv);
+
+    let hDiv=document.getElementById('highlight');
+    hDiv.appendChild(childDiv);
+    // document.querySelector('.parent-div').appendChild(childDiv)
+    
+    hDiv.removeChild(childDiv);
+
+    let newDiv= document.createElement('div');
+    newDiv.textContent='This is the new div';
+
+    document.body.insertBefore(newDiv, parentDiv);
+
+
+    let divs= document.getElementsByTagName('div');
+    console.log(divs[2]);
+
+    // newDiv.remove();
+
+</script>
+</html>
+
