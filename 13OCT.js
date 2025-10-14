@@ -26,18 +26,19 @@
 
 
 
-const person={
-    firstName: "Gunjan",
-    lastName: "Rathore",
-    age: 20,
-    city: "Indore",
-    greet: function(){
-        console.log(`You're welcome ${this.firstName}`);
-    }
-}
+// const person={
+//     firstName: "Gunjan",
+//     lastName: "Rathore",
+//     age: 20,
+//     city: "Indore",
+//     greet: function(){
+//         console.log(`You're welcome ${this.firstName}`);
+//     }
+// }
 
-function name(){
-    console.log(`Thanks for visiting ${this.firstName} ${this.lastName}`);
-}
-person.greet();
-name.call(person);
+// function name(){
+//     console.log(`Thanks for visiting ${this.firstName} ${this.lastName}`);
+// }
+// person.greet();
+// name.call(person);
+
